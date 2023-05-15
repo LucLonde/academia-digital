@@ -1,6 +1,7 @@
 package me.dio.academia.digital.service;
 
 import me.dio.academia.digital.entity.Aluno;
+import me.dio.academia.digital.entity.AvaliacaoFisica;
 import me.dio.academia.digital.entity.form.AlunoForm;
 import me.dio.academia.digital.entity.form.AlunoUpdateForm;
 
@@ -27,7 +28,9 @@ public interface IAlunoService {
    */
   List<Aluno> getAll();
 
-  /**
+    List<Aluno> getAll(String dataDeNascimento);
+
+    /**
    * Atualiza o Aluno.
    * @param id - id do Aluno que será atualizado.
    * @param formUpdate - formulário referente aos dados necessários para atualização do Aluno
@@ -41,4 +44,6 @@ public interface IAlunoService {
    * @param id - id do Aluno que será removido.
    */
   void delete(Long id);
+
+    List<AvaliacaoFisica> getAllAvaliacaoFisicaId(Long id);
 }
